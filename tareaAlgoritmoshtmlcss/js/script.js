@@ -1,4 +1,4 @@
-class algoritmos{
+class Algoritmos{
   ejer1(){
     // 1. Grados Celsius a Fahrenheit.
     // Proceso ejer1
@@ -8,9 +8,10 @@ class algoritmos{
     //     fahrenheit = (celsius * 9 / 5) + 32
     //     Escribir los grados celcius en grados fahrenheit
     // FinProceso
-    let celsius = prompt("Ingrese grados celsius: ");
-    let fahrenheit = (celsius * 9/5) + 32;
-    console.log(`${celsius} grados celsius a grados fahrenheit son: ${fahrenheit}`);
+    let num1 = parseFloat(document.getElementById("num1").value);
+    let resp = document.getElementById("resp");
+    let fahrenheit = (num1 * 9/5) + 32;
+    resp.textContent = `${num1} grados celsius a grados fahrenheit son: ${fahrenheit}`;
   }
   
   ejer2(){
@@ -24,11 +25,11 @@ class algoritmos{
     //     Escribir "El doble de ", num, " es ", doble, "."
     //     Escribir "El triple de ", num, " es ", triple, "."
     // FinProceso
-    let num = parseInt(prompt('Ingrese un numero entero: '));
-    doble = num * 2;
-    triple = num * 3;
-    console.log(`El doble de ${num} es ${doble}.`);
-    console.log(`El triple de ${num} es ${triple}.`);
+    let num = parseInt(document.getElementById("num1").value);
+    let resp = document.getElementById("resp");
+    let doble = num * 2;
+    let triple = num * 3;
+    resp.textContent = `El doble de ${num} es ${doble} y el triple de ${num} es ${triple}`;
   }
   
   ejer3(){
@@ -50,16 +51,15 @@ class algoritmos{
     //     Escribir "La suma es de: ", suma
     //     Escribir "El media es de: ", media
     // FinProceso
-    let v1 = parseFloat(prompt("Ingrese la variable 1: "));
-    let v2 = parseFloat(prompt("Ingrese la variable 2: "));
-    let v3 = parseFloat(prompt("Ingrese la variable 3: "));
-    let v4 = parseFloat(prompt("Ingrese la variable 4: "));
-    let producto = v1 * v2 * v3 * v4;
-    let suma = v1 + v2 + v3 + v4;
-    let media = suma / 4;
-    console.log(`El producto es de: ${producto}`);
-    console.log(`La suma es de: ${suma}`);
-    console.log(`El media es de: ${media}`);
+    let v1 = parseInt(document.getElementById("num1").value);
+    let v2 = parseInt(document.getElementById("num2").value);
+    let v3 = parseInt(document.getElementById("num3").value);
+    let v4 = parseInt(document.getElementById("num4").value);
+    let resp = document.getElementById("resp");
+    let producto = v1*v2*v3*v4;
+    let suma = v1+v2+v3+v4
+    let media = suma/4;
+    resp.innerHTML = `El producto es de: ${producto} <br> La suma es de: ${suma} <br> El media es de: ${media}`;
   }
   
   ejer4(){
@@ -73,11 +73,11 @@ class algoritmos{
     //     Escribir "El peso en kilogramos es: ", kilogramos
     //     Escribir "El peso en gramos es: ", gramos
     // FinProceso
-    let pesoLibras = parseFloat(prompt('Ingrese su peso en libras: '));
+    let pesoLibras = document.getElementById('num1').value;
+    let resp = document.getElementById("resp");
     let kilogramos = pesoLibras * 0.453592; 
     let gramos = pesoLibras * 453.592;
-    console.log(`El peso en kilogramos es: ${kilogramos}`);
-    console.log(`El peso en gramos es: ${gramos}`);
+    resp.innerHTML = (`El peso en kilogramos es: ${kilogramos} <br> El peso en gramos es: ${gramos}`);
   }
   
   ejer5(){
@@ -93,11 +93,12 @@ class algoritmos{
     //     x = ((sen(a) + cos(b)) * (trunc(a) mod 2)) + (raiz(a^3) / (a * b + c))
     //     Escribir "El valor de x es: ", x
     // FinProceso
-    let a = parseFloat(prompt("Ingrese el valor de a: "));
-    let b = parseFloat(prompt("Ingrese el valor de b: "));
-    let c = parseFloat(prompt("Ingrese el valor de c: "));
+    let a = document.getElementById("num1").value;
+    let b = document.getElementById("num2").value;
+    let c = document.getElementById("num3").value;
+    let resp = document.getElementById("resp");
     let x = ((Math.sin(a) + Math.cos(b)) * (Math.trunc(a) % 2)) + (Math.sqrt(Math.pow(a, 3)) / (a * b + c));
-    console.log(`El valor de x es: ${x}`);
+    resp.textContent = `El valor de x es: ${x}`;
   }
   
   ejer6(){
@@ -133,7 +134,8 @@ class algoritmos{
     //     Escribir "Neto recibir: ", netoRecibir
     // FinProceso
     let horasNormales = 40;
-    let horasTrabajadas = parseInt(prompt("Ingrese las horas trabajadas en la semana: "));
+    let horasTrabajadas = document.getElementById("num1").value;
+    let resp = document.getElementById("resp");
     let tarifaHora = 5;
     let sueldoNormal = 0;
     let sueldoExtra = 0;
@@ -149,11 +151,13 @@ class algoritmos{
     ingresoTotal = sueldoNormal + sueldoExtra;
     seguroSocial = ingresoTotal * 0.10;
     netoRecibir = ingresoTotal - seguroSocial;
-    console.log(`Sueldo normal: ${sueldoNormal}`);
-    console.log(`Sueldo extra: ${sueldoExtra}`);
-    console.log(`Ingreso total: ${ingresoTotal}`);
-    console.log(`Seguro social: ${seguroSocial}`);
-    console.log(`Neto recibir: ${netoRecibir}`);
+    resp.innerHTML = `
+    Sueldo normal: ${sueldoNormal} <br>
+    Sueldo extra: ${sueldoExtra} <br>
+    Ingreso total: ${ingresoTotal} <br>
+    Seguro social: ${seguroSocial} <br>
+    Neto recibir: ${netoRecibir}
+    `;
   }
   
   ejer7(){
@@ -174,16 +178,17 @@ class algoritmos{
     //         Escribir "Los números ingresados no cumplen con lo requerido."
     //     FinSi
     // FinProceso
-    let num1 = parseInt(prompt("Ingrese un número: "));
-    let num2 = parseInt(prompt("Ingrese otro número: "));
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let resp = document.getElementById("resp")
     if (num1 % 2 == 0 && num2 % 2 == 1) {
-        if (num1 > num2) {
-            console.log(`${num1} es mayor que ${num2}`);
-        } else {
-            console.log(`${num2} es mayor que ${num1}`);
-        }
+      if (num1 > num2) {
+        resp.textContent = `${num1} es mayor que ${num2}`;
+      } else {
+        resp.textContent = `${num2} es mayor que ${num1}`;
+      }
     } else {
-        console.log("Los números ingresados no cumplen con lo requerido.");
+        resp.textContent = "Los números ingresados no cumplen con lo requerido.";
     }
   }
   
