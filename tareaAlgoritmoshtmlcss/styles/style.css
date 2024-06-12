@@ -1,0 +1,261 @@
+:root{
+  font-size: 10px;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+  --color-1principal: #bd0000;
+  --color-2principal: #ff9900;
+  --color-3principal: #ffff00;
+  --color-1secundario: #830000;
+  --color-2secundario: #e27900;
+  --color-3secundario: #dddd00;
+  --color-1terciario: #bebebe;
+  --color-2terciario: #8a8a8a;
+  --color-3terciario: #242424;
+}
+
+*{
+  margin: 0rem;
+  padding: 0rem;
+  /* border: 2px solid black; */
+}
+
+body{
+  background: var(--color-1terciario);
+  padding: 1rem;
+}
+
+header{
+  background-color: var(--color-1secundario);
+  border: 0.6rem solid var(--color-1principal);
+  margin: 0rem 0rem 2rem 0rem;
+  /*arriba derecha abajo izquierda*/
+  padding: 1rem 1rem;
+  border-radius: 8rem;
+  box-shadow: 0rem 0rem 1rem 0.1rem var(--color-1principal);
+}
+
+h1{
+  color: var(--color-blanco);
+  text-align: center;
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.parrafoD{
+  margin: 0rem 2rem 0rem 2rem;
+  /*arriba derecha abajo izquierda*/
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  text-align: center;
+}
+
+.contenedorM{
+  padding: 1rem;
+  background-color: var(--color-1secundario);
+  border: 0.6rem solid var(--color-1principal);
+  border-radius: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-shadow: 0rem 0rem 1rem 0.1rem var(--color-1principal);
+  
+}
+
+.contenedorM2{
+  background-color: var(--color-1secundario);
+  border: 0.6rem solid var(--color-1principal);
+  border-radius: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-shadow: 0rem 0rem 1rem 0.1rem var(--color-1principal);
+}
+
+.ejercicios{
+  display: flex;
+  margin: 3rem 0rem 0rem 0rem;
+  /*arriba derecha abajo izquierda*/
+  gap: 3rem;
+  box-sizing: border-box;
+  width: calc(33%);
+}
+
+.linkA{
+  border: 0.3rem solid var(--color-1principal);
+  margin: 0rem 3rem 0rem 3rem;
+  /*arriba derecha abajo izquierda*/
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-2secundario);
+  padding: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0rem 0rem 1rem 0.1rem var(--color-1principal);
+  width: 100%;
+}
+
+.linkA:hover{
+  transform: scale(1.05);
+}
+
+.subTitulo{
+  color: var(--color-blanco);
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+  margin: 0.5rem 0rem 3rem 0rem;
+  /*arriba derecha abajo izquierda*/
+}
+
+.subTitulo:hover{
+  transform: scale(1.04);
+}
+
+.imagenP{
+  height: 16rem;
+  border-radius: 1.5rem;
+  box-shadow: 0rem 0rem 2rem 0.1rem var(--color-1principal);
+  transition: all 0.3s ease-in-out;
+}
+
+.imagenP:hover{
+  transform: scale(1.06);
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.grupoForm {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.grupoForm input {
+  text-transform: uppercase;
+}
+
+.label {
+  margin: 3rem 0rem 1rem 0rem;
+  /*arriba derecha abajo izquierda*/
+  color: var(--color-blanco);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+input {
+  margin: 1rem 0rem 2rem 0rem;
+  /*arriba derecha abajo izquierda*/
+  width: 80%;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: 0.5rem outset var(--color-2principal);
+  box-shadow: 0 0 1rem var(--color-2secundario);
+  transition: all 0.4s ease-in-out;
+}
+
+input:hover {
+  transform: scale(1.02);
+  border: 0.5rem inset var(--color-2principal);
+}
+
+input:focus {
+  transform: scale(1.03);
+  border: 0.5rem inset var(--color-2principal);
+}
+
+input:active {
+  transform: scale(1.03);
+  border: 0.5rem inset var(--color-2principal);
+}
+
+#resp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: var(--color-blanco);
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--color-2principal);
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem var(--color-2secundario);
+  transition: all 0.4s ease-in-out;
+}
+
+/* botones */
+
+.boton, .botonR {
+  display: inline-block;
+  text-transform: capitalize;
+  margin: 2rem 0rem 2rem 0rem;
+  /*arriba derecha abajo izquierda*/
+  padding: 0.5rem 1rem;
+  font-size: 3rem;
+  color: var(--color-blanco);
+  background-color: var(--color-2secundario);
+  border: 0.2rem solid var(--color-2principal);
+  border-radius: 3rem;
+  text-decoration: none;
+  box-shadow: 0rem 0rem 1rem 0.5rem var(--color-2secundario);
+  transition: all 0.4s ease-in-out;
+}
+
+.cRegresar {
+  display: flex;
+  justify-content: right;
+  margin: 1rem 0;
+}
+
+.cRegresarIndex {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.boton:hover, .botonR:hover {
+  color: var(--color-terciario);
+  background-color: var(--color-2principal);
+  border: 0.2rem solid var(--color-2secundario);
+  transform: scale(1.06);
+}
+
+.boton:focus, .botonR:focus {
+  color: var(--color-terciario);
+  background-color: var(--color-2principal);
+  border: 0.2rem solid var(--color-2secundario);
+  transform: scale(1.06);
+}
+
+.boton:active, .botonR:active {
+  color: var(--color-blanco);
+  background-color: var(--color-2principal);
+  border: 0.2rem solid var(--color-negro);
+}
+
+#cBox {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+/* contenedor-aceptar,limpiar */
+
+.cBotones{
+  display: flex;
+  justify-content: space-evenly;
+}
