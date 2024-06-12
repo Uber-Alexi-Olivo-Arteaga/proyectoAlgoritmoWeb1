@@ -9,7 +9,7 @@ class Algoritmos{
     //     Escribir los grados celcius en grados fahrenheit
     // FinProceso
     let num1 = parseFloat(document.getElementById("num1").value);
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let fahrenheit = (num1 * 9/5) + 32;
     resp.textContent = `${num1} grados celsius a grados fahrenheit son: ${fahrenheit}`;
   }
@@ -26,7 +26,7 @@ class Algoritmos{
     //     Escribir "El triple de ", num, " es ", triple, "."
     // FinProceso
     let num = parseInt(document.getElementById("num1").value);
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let doble = num * 2;
     let triple = num * 3;
     resp.textContent = `El doble de ${num} es ${doble} y el triple de ${num} es ${triple}`;
@@ -55,7 +55,7 @@ class Algoritmos{
     let v2 = parseInt(document.getElementById("num2").value);
     let v3 = parseInt(document.getElementById("num3").value);
     let v4 = parseInt(document.getElementById("num4").value);
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let producto = v1*v2*v3*v4;
     let suma = v1+v2+v3+v4
     let media = suma/4;
@@ -74,7 +74,7 @@ class Algoritmos{
     //     Escribir "El peso en gramos es: ", gramos
     // FinProceso
     let pesoLibras = document.getElementById('num1').value;
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let kilogramos = pesoLibras * 0.453592; 
     let gramos = pesoLibras * 453.592;
     resp.innerHTML = (`El peso en kilogramos es: ${kilogramos} <br> El peso en gramos es: ${gramos}`);
@@ -96,7 +96,7 @@ class Algoritmos{
     let a = document.getElementById("num1").value;
     let b = document.getElementById("num2").value;
     let c = document.getElementById("num3").value;
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let x = ((Math.sin(a) + Math.cos(b)) * (Math.trunc(a) % 2)) + (Math.sqrt(Math.pow(a, 3)) / (a * b + c));
     resp.textContent = `El valor de x es: ${x}`;
   }
@@ -135,7 +135,7 @@ class Algoritmos{
     // FinProceso
     let horasNormales = 40;
     let horasTrabajadas = document.getElementById("num1").value;
-    let resp = document.getElementById("resp");
+    let resp = document.getElementById('resp');
     let tarifaHora = 5;
     let sueldoNormal = 0;
     let sueldoExtra = 0;
@@ -180,7 +180,7 @@ class Algoritmos{
     // FinProceso
     let num1 = document.getElementById("num1").value;
     let num2 = document.getElementById("num2").value;
-    let resp = document.getElementById("resp")
+    let resp = document.getElementById('resp');
     if (num1 % 2 == 0 && num2 % 2 == 1) {
       if (num1 > num2) {
         resp.textContent = `${num1} es mayor que ${num2}`;
@@ -209,14 +209,15 @@ class Algoritmos{
     //         FinSi
     //     FinSi
     // FinProceso
-    let caracter = prompt('Ingrese un caracter: ');
+    let caracter = document.getElementById('num1').value;
+    let resp = document.getElementById('resp');
   
     if(caracter >= 'a' && caracter <= 'z'){
-        console.log(`${caracter} está comprendido entre las letras a y z.`);
+      resp.textContent = `${caracter} está comprendido entre las letras a y z.`;
     } else if(caracter == ',' || caracter == ';' || caracter == '.' || caracter == ':'){
-        console.log(`${caracter} es un signo de puntuación.`);
+      resp.textContent = `${caracter} es un signo de puntuación.`;
     } else{
-        console.log(`El caracter es ${caracter}`);
+      resp.textContent = `El caracter es ${caracter}`;
     }
   }
   
@@ -235,13 +236,14 @@ class Algoritmos{
     //     FinSi
     //     Escribir "El precio total a pagar es de ", precio
     // FinProceso
-    let cola = parseInt(prompt("Ingrese la cantidad de colas que va a llevar: "));
-    precio = cola * 0.25;
+    let cola = parseInt(document.getElementById("num1").value);
+    let resp = document.getElementById('resp');
+    let precio = cola * 0.25;
     if (cola > 12){
-    descuento = precio * 0.10;
-    precio = precio - descuento; 
+      let descuento = precio * 0.10;
+      precio = precio - descuento; 
     }
-    console.log(`El precio total a pagar es de ${precio}`);
+    resp.textContent = `El precio total a pagar es de ${precio}`;
   }
   
   ejer10(){
@@ -271,7 +273,8 @@ class Algoritmos{
     //     Escribir "El precio con descuento es de: ", precioFinal
     //     Escribir "El pago final con IVA es: ", pago
     // FinProceso
-    let precioTraje = parseFloat(prompt('Ingrese el precio de su traje: '));
+    let precioTraje = document.getElementById('num1').value;
+    let resp = document.getElementById('resp');
     let descuento = 0;
     let iva = 0.15;
     let precioFinal = 0;
@@ -286,10 +289,13 @@ class Algoritmos{
         precioFinal = precioTraje - descuentoNuevo;
     }
     pago = precioFinal + (precioFinal * iva);
-    console.log(`El precio original del traje es de: ${precioTraje}`);
-    console.log(`El descuento nuevo es de: ${descuentoNuevo}`);
-    console.log(`El precio con descuento es de: ${precioFinal}`);
-    console.log(`El pago final con IVA es: ${pago}`);
+    resp.innerHTML = `
+    El precio original del traje es de: ${precioTraje} <br>
+    El descuento nuevo es de: ${descuentoNuevo} <br>
+    El descuento nuevo es de: ${descuentoNuevo} <br>
+    El precio con descuento es de: ${precioFinal} <br>
+    El pago final con IVA es: ${pago}
+    `;
   }
   
   ejer11(){
@@ -315,12 +321,13 @@ class Algoritmos{
     //     FinSi
     // FinProceso
     let dias = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"];
-    let dia = parseInt(prompt("Ingrese un número del día de la semana del 1 al 7: "));
+    let dia = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
     if (dia < 1 || dia > 7){
-        console.log("El número ingresado no es válido. Por favor, ingrese un número entre 1 y 7.");
+        resp.textContent = "El número ingresado no es válido. Por favor, ingrese un número entre 1 y 7.";
     } else {
         let nombreDia = dias[dia - 1];
-        console.log(`El número que ha seleccionado corresponde a: ${nombreDia}`);
+        resp.textContent = `El número que ha seleccionado corresponde a: ${nombreDia}`;
     }
   }
   
@@ -352,13 +359,13 @@ class Algoritmos{
     //     FinSi
     // FinProceso
     let meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-    let mes = parseInt(prompt("Ingrese un número del mes del 1 al 12: "));
-  
+    let mes = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
     if (mes < 1 || mes > 12){
-        console.log("El número ingresado no es válido. Por favor, ingrese un número entre 1 y 12.");
+        resp.textContent = "El número ingresado no es válido. Por favor, ingrese un número entre 1 y 12.";
     } else {
         let nombreMes = meses[mes - 1];
-        console.log(`El número que ha seleccionado corresponde a: ${nombreMes}`);
+        resp.textContent = `El número que ha seleccionado corresponde a: ${nombreMes}`;
     }
   }
   
@@ -381,13 +388,14 @@ class Algoritmos{
     //     Escribir "Los nombres ingresados son: ", nombre
     // FinProceso
     let nombre= [];
-    let n1 = prompt("Ingrese un nombre: ");
-    let n2 = prompt("Ingrese otro nombre: ");
-    let n3 = prompt("Ingrese otro nombre: ");
-    let n4 = prompt("Ingrese otro nombre: ");
-    let n5 = prompt("Ingrese otro nombre: ");
+    let n1 = document.getElementById("num1").value;
+    let n2 = document.getElementById("num2").value;
+    let n3 = document.getElementById("num3").value;
+    let n4 = document.getElementById("num4").value;
+    let n5 = document.getElementById("num5").value;
+    let resp = document.getElementById('resp');
     nombre.push(n5,n4,n3,n2,n1);
-    console.log(`Los nombres ingresados son: ${nombre}`);
+    resp.textContent = `Los nombres ingresados son: ${nombre}`;
   }
   
   ejer14(){
@@ -408,14 +416,17 @@ class Algoritmos{
     //     Escribir "El caracter del medio es: ", caracterEnMedio
     //     Escribir "El ultimo caracter es: ", ultimoCar
     // FinProceso
-    let direccion = prompt('Ingrese una dirección: ')
+    let direccion = document.getElementById("num1").value
+    let resp = document.getElementById('resp');
     let primerCar = direccion[0];
     let carEnmedio = Math.floor(direccion.length / 2);
     let ultimoCar = direccion[direccion.length - 1];
     let caracterEnMedio = direccion[carEnmedio];
-    console.log(`El primer caracter es: ${primerCar}`);
-    console.log(`El caracter del medio es: ${caracterEnMedio}`);
-    console.log(`El ultimo caracter es: ${ultimoCar}`);
+    resp.innerHTML = `
+    El primer caracter es: ${primerCar} <br>
+    El caracter del medio es: ${caracterEnMedio} <br>
+    El ultimo caracter es: ${ultimoCar}
+    `;
   }
   
   ejer15(){
@@ -433,15 +444,16 @@ class Algoritmos{
     //     FinSi
     // FinProceso
     let valores = [];
+    let resp = document.getElementById('resp');
     for (let i = 0; i < 5 ; i++){
         let valor = parseInt(Math.random()*100);
         valores.push(valor);
     }
     if (valores[0] % 2 == 0 && valores[0] > 0){
-        console.log(`El número ${valores[0]} es par y positivo`);
+        resp.textContent = `El número ${valores[0]} es par y positivo`;
     }
     if (valores[4] % 2 == 1 || valores[4] % 2 == -1 && valores[4] < 0){
-        console.log(`El número ${valores[4]} es impar y negativo`);
+        resp.textContent = `El número ${valores[4]} es impar`;
     }
   }
   
@@ -469,17 +481,18 @@ class Algoritmos{
     //     FinPara
     // FinProceso
     let nombres = [];
-    let n1 = prompt('Ingrese nombre 1: ');
-    let n2 = prompt('Ingrese nombre 2: ');
-    let n3 = prompt('Ingrese nombre 3: ');
+    let n1 = document.getElementById('num1').value;
+    let n2 = document.getElementById('num2').value;
+    let n3 = document.getElementById('num3').value;
     nombres.push(n1, n2, n3);
+    
     for (let i = 0; i < nombres.length; i++) {
-        let nombre = nombres[i];
-        if (nombre.length > 0) {
-            let primerCaracter = nombre[0];
-            let ultimoCaracter = nombre[nombre.length - 1];
-            console.log(`Nombre: ${nombre}, primer carácter: ${primerCaracter}, último carácter: ${ultimoCaracter}`);
-        }
+      let nombre = nombres[i];
+      if (nombre.length > 0) {
+        let primerCaracter = nombre[0];
+        let ultimoCaracter = nombre[nombre.length - 1];
+        resp.innerHTML = resp.innerHTML + `Nombre: ${nombre}, primer carácter: ${primerCaracter}, último carácter: ${ultimoCaracter}<br>`;
+      }
     }
   }
   
@@ -497,12 +510,13 @@ class Algoritmos{
     //         Escribir "El primer carácter de la cadena es un dígito: ", primerCaracter
     //     FinSi
     // FinProceso
-    let cadena = prompt("Ingrese una cadena:");
-    let primerCaracter = cadena[0];
-    if (!isNaN(primerCaracter)){
-        console.log(`El primer caracter de la cadena es un digito: ${primerCaracter}`);
+    let cadena = document.getElementById("num1");
+    let resp = document.getElementById('resp');
+    let primerCaracter = cadena.value[0];
+    if (!isNaN(primerCaracter) && primerCaracter !== ' ' && primerCaracter !== undefined) {
+      resp.textContent = `El primer carácter de la cadena es un dígito: ${primerCaracter}`;
     } else {
-        console.log(`El primer carácter de la cadena no es un dígito.`);
+      resp.textContent = `El primer carácter de la cadena no es un dígito.`;
     }
   }
   
@@ -520,12 +534,13 @@ class Algoritmos{
     //         Escribir "El último carácter de la cadena no es una letra."
     //     FinSi
     // FinProceso
-    let cadena = prompt("Ingrese una cadena:");
+    let cadena = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
     let ultimoCaracter = cadena[cadena.length - 1];
     if ((ultimoCaracter >= 'a' && ultimoCaracter <= 'z') || (ultimoCaracter >= 'A' && ultimoCaracter <= 'Z')) {
-        console.log(`El último carácter de la cadena es una letra: ${ultimoCaracter}`);
+        resp.textContent=`El último carácter de la cadena es una letra: ${ultimoCaracter}`;
     } else {
-        console.log(`El último carácter de la cadena no es una letra.`);
+        resp.textContent=`El último carácter de la cadena no es una letra.`;
     }
   }
   
@@ -543,12 +558,13 @@ class Algoritmos{
     //         Escribir "La palabra ", caracter, " no tiene vocal"
     //     FinSi
     // FinProceso
-    let caracter = prompt("ingrese una palabra: ");
-    n = caracter[0];
-    if (n == "a" || n == "A" || n == "e" || n == "E" || n == "i" || n == "I" || n == "o" || n == "O" || n == "u" || N =="U"){
-        console.log(`La palabra ${caracter} tiene la vocal ${n} al inicio`);
-    }else{
-        console.log(`La palabra ${caracter} no tiene vocal`);
+    let caracter = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
+    let n = caracter[0];
+    if (n === "a" || n === "A" || n === "e" || n === "E" || n === "i" || n === "I" || n === "o" || n === "O" || n === "u" || n === "U") {
+      resp.textContent = `La palabra ${caracter} tiene la vocal ${n} al inicio`;
+    } else {
+      resp.textContent = `La palabra ${caracter} no tiene vocal al inicio`;
     }
   }
   
@@ -568,13 +584,14 @@ class Algoritmos{
     //         Escribir "El carácter de en medio no es un carácter de puntuación."
     //     FinSi
     // FinProceso
-    let cadena = prompt("Ingrese una cadena: ");
+    let cadena = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
     let indiceMedio = Math.floor(cadena.length / 2);
     let caracterMedio = cadena[indiceMedio];
     if (caracterMedio === ';' || caracterMedio === ':' || caracterMedio === '.' || caracterMedio === ',') {
-        console.log(`El carácter de en medio es un carácter de puntuación: ${caracterMedio}`);
+        resp.textContent = `El carácter de en medio es un carácter de puntuación: ${caracterMedio}`;
     } else {
-        console.log(`El carácter de en medio no es un carácter de puntuación.`);
+        resp.textContent = `El carácter de en medio no es un carácter de puntuación.`;
     }
   }
   
@@ -596,16 +613,17 @@ class Algoritmos{
     //         FinSi
     //     FinSi
     // FinProceso
-    let car1 = prompt("Ingrese una palabra: ");
-    let car2 = prompt("Ingrese otra palabra: ");
+    let car1 = document.getElementById("num1").value;
+    let car2 = document.getElementById("num2").value;
+    let resp = document.getElementById('resp');
     if(car1 == car2){
-        console.log(`La palabra ${car1} se repite.`);
+      resp.textContent = `La palabra ${car1} se repite.`;
     }else{
-        if(car1 > car2){
-            console.log(`La palabra ${car1} es mayor que ${car2}`);
-        }else{
-            console.log(`La palabra ${car2} es mayor que ${car1}`);
-        }
+      if(car1 > car2){
+        resp.textContent = `La palabra ${car1} es mayor que ${car2}`;
+      }else{
+        resp.textContent = `La palabra ${car2} es mayor que ${car1}`;
+      }
     }
   }
   
@@ -625,15 +643,15 @@ class Algoritmos{
     //         Escribir "El primer nombre es mayor que el segundo nombre."
     //     FinSi
     // FinProceso
-    let nombre1 = prompt("Ingrese el primer nombre: ");
-    let nombre2 = prompt("Ingrese el segundo nombre: ");
-    
+    let nombre1 = document.getElementById("num1").value;
+    let nombre2 = document.getElementById("num2").value;
+    let resp = document.getElementById('resp');
     if (nombre1 == nombre2) {
-        console.log(`Los nombres son iguales.`);
+        resp.textContent = `Los nombres son iguales.`;
     } else if (nombre1 < nombre2) {
-        console.log(`El primer nombre es menor que el segundo nombre.`);
+        resp.textContent = `El primer nombre es menor que el segundo nombre.`;
     } else {
-        console.log(`El primer nombre es mayor que el segundo nombre.`);
+        resp.textContent = `El primer nombre es mayor que el segundo nombre.`;
     }
   }
   
@@ -645,8 +663,9 @@ class Algoritmos{
     //     Escribir "La cantidad de elementos que tiene es de ", Longitud(cadena)
     // FinProceso
     let cadena = [];
-    cadena = prompt("Ingrese algo: ");
-    console.log(`La cantidad de elementos que tiene es de ${cadena.length}`);
+    cadena = document.getElementById("num1").value;
+    let resp = document.getElementById('resp');
+    resp.textContent = `La cantidad de elementos que tiene es de ${cadena.length}`;
   }
   
   ejer24(){
@@ -657,7 +676,8 @@ class Algoritmos{
     //     Escribir "El arreglo tiene ", Longitud(arreglo), " elementos."
     // FinProceso
     let arreglo = [1, 2, 3, 4, 5];
-    console.log(`El arreglo tiene ${arreglo.length} elementos.`);
+    let resp = document.getElementById('resp');
+    resp.textContent = `El arreglo ${arreglo} tiene ${arreglo.length} elementos.`;
   }
 }
 
